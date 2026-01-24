@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBS Komputer | Booking</title>
+
+  <link rel="icon" href="assets/logo-ibs.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <div class="brand">
+      <img src="assets/logo-ibs.png">
+      IBS KOMPUTER
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section class="page active">
+    <h2>Booking Service</h2><br>
+    <p>* Kirimkan foto kerusakan Laptop anda pada saat Booking menuju Whatsapp.</p>
+
+    <div class="booking-container">
+      <input id="b_nama" placeholder="Nama Lengkap">
+      <input id="b_wa" placeholder="Nomor WhatsApp (Contoh: 628xxx)">
+      <select id="b_layanan">
+        <option value="" disabled selected>Pilih Layanan</option>
+        <option>Service Laptop</option>
+        <option>Service PC</option>
+        <option>Install Ulang Windows</option>
+        <option>Software dan Antivirus</option>
+      </select>
+      <textarea id="b_keluhan" placeholder="Jelaskan Keluhan / Kebutuhan Anda..." rows="4"></textarea>
+
+      <button class="submit" onclick="sendBooking()">
+        <i class="fab fa-whatsapp"></i> Kirim Booking Sekarang
+      </button>
+    </div>
+  </section>
+
+  <footer>© 2026 IBS Komputer – PT. Al-Hamdani IBS</footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
