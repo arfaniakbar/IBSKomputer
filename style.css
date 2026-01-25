@@ -464,8 +464,8 @@ footer {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   #dashboard .hero>div {
@@ -486,12 +486,12 @@ footer {
   }
 
   #dashboard .status {
-    margin: 0 auto 14px;
+    margin: 0 0 14px;
   }
 
   #dashboard .hero-cta {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
   }
 
@@ -1035,5 +1035,185 @@ footer {
 
   nav img {
     width: 32px;
+  }
+}
+
+/* =====================
+   ADDITIONAL INFO
+   ===================== */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.brand-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: 0.3s;
+  color: #fff;
+}
+
+.brand-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.popular-card {
+  background: rgba(18, 15, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  text-align: center;
+}
+
+.popular-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent2);
+  box-shadow: 0 15px 30px rgba(236, 72, 153, 0.2);
+}
+
+.pop-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom right, var(--accent), var(--accent2));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.popular-card h4 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.pop-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent2);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-bottom-left-radius: 12px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .brand-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .brand-item {
+    font-size: 0.75rem;
+    padding: 10px 5px;
+  }
+
+  .popular-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .popular-card {
+    padding: 20px 10px;
+  }
+
+  .popular-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .pop-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* =====================
+   CONTACT PAGE INFO
+   ===================== */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-item-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: 0.3s ease;
+}
+
+.contact-item-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.contact-item-card i {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom right, var(--accent), var(--accent2));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.contact-item-card h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--accent2);
+}
+
+.contact-item-card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-item-card {
+    padding: 20px;
   }
 }
