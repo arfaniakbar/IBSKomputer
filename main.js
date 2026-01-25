@@ -42,10 +42,10 @@ const status = document.getElementById('status');
 if (status) {
   if (hour >= 9 && hour <= 21) {
     status.className = 'status open';
-    status.innerHTML = '● OPEN SEKARANG';
+    status.innerHTML = 'OPEN SEKARANG';
   } else {
     status.className = 'status closed';
-    status.innerHTML = '● TUTUP • BUKA 09.00';
+    status.innerHTML = 'TUTUP • BUKA 10.00';
   }
 }
 
