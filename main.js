@@ -35,19 +35,7 @@ function sendBooking() {
   window.open(`https://wa.me/${admin}?text=${text}`, '_blank');
 }
 
-/* Dashboard */
-const hour = new Date().getHours();
-const status = document.getElementById('status');
 
-if (status) {
-  if (hour >= 9 && hour <= 21) {
-    status.className = 'status open';
-    status.innerHTML = 'OPEN SEKARANG';
-  } else {
-    status.className = 'status closed';
-    status.innerHTML = 'TUTUP • BUKA 10.00';
-  }
-}
 
 /* ===== MOBILE HAMBURGER AUTO-INJECT ===== */
 const nav = document.querySelector('nav');
