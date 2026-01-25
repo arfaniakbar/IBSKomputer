@@ -1042,30 +1042,65 @@ footer {
 /* =====================
    ADDITIONAL INFO
    ===================== */
-.brand-grid {
+.workflow-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
-.brand-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 15px;
-  border-radius: 12px;
+.workflow-item {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 30px 20px;
+  border-radius: 20px;
   text-align: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: 0.3s;
+}
+
+.workflow-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to right, var(--accent), var(--accent2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+.workflow-item i {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.workflow-item h4 {
+  margin-bottom: 10px;
   color: #fff;
 }
 
-.brand-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
-  border-color: var(--accent);
+.workflow-item p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.4;
 }
 
 .popular-grid {
@@ -1258,8 +1293,17 @@ footer {
     gap: 12px !important;
   }
 
-  .brand-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
+  .workflow-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 12px !important;
+  }
+
+  .workflow-item {
+    padding: 25px 15px !important;
+  }
+
+  .workflow-item i {
+    font-size: 2rem !important;
   }
 
   .card,
