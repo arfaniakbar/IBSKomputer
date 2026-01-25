@@ -842,6 +842,7 @@ footer {
   font-size: 2rem;
   background: linear-gradient(to right, var(--accent), var(--accent2));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1214,6 +1215,87 @@ footer {
   }
 
   .contact-item-card {
-    padding: 20px;
+    padding: 18px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 18px !important;
+    gap: 12px !important;
+  }
+
+  .contact-item-card i {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.1rem !important;
+  }
+
+  .contact-item-card h4 {
+    font-size: 0.9rem !important;
+  }
+
+  .contact-item-card p {
+    font-size: 0.75rem !important;
+  }
+
+  /* FORCE LEFT ALIGNMENT ON MOBILE FOR ALL HERO ELEMENTS */
+  #dashboard .hero,
+  #dashboard .hero>div {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  #dashboard .hero-cta {
+    justify-content: flex-start !important;
+  }
+
+  #dashboard .status {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* GRID CARDS FIX */
+  .grid,
+  .popular-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .brand-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .card,
+  .popular-card {
+    text-align: left !important;
+    padding: 15px !important;
+  }
+
+  .card i,
+  .pop-icon {
+    margin-left: 0 !important;
+  }
+
+  /* TESTIMONIALS FIX */
+  .testimonial-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 12px !important;
+    padding: 10px 5px 25px !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .testimonial-card {
+    min-width: 260px !important;
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .client-img {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid var(--accent);
   }
 }
