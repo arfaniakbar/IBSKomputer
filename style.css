@@ -192,18 +192,27 @@ nav a:hover::after {
 
 .card {
   background: rgba(255, 255, 255, .06);
-  padding: 25px;
+  padding: 30px 20px;
   border-radius: 20px;
   backdrop-filter: blur(15px);
-  transition: .4s;
-  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Soft White Border */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  /* Subtle Glow */
+  transition: .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   text-decoration: none;
   color: var(--text);
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .6);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
 }
 
 .card i {
@@ -581,6 +590,10 @@ footer {
     scroll-snap-align: center;
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
+  }
+
+  .client-info h4 {
+    margin-bottom: 2px !important;
   }
 }
 
@@ -1311,13 +1324,16 @@ footer {
 
   .card,
   .popular-card {
-    text-align: left !important;
-    padding: 15px !important;
+    text-align: center !important;
+    padding: 20px 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .card i,
   .pop-icon {
-    margin-left: 0 !important;
+    margin: 0 0 10px 0 !important;
   }
 
   /* TESTIMONIALS FIX */
@@ -1382,6 +1398,7 @@ footer {
     font-size: 0.85rem !important;
   }
 }
+
 /* QUICK NAV */
 .quick-nav {
   margin-top: 60px;
@@ -1399,25 +1416,32 @@ footer {
 }
 
 .quick-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 380px;
+  /* Diperkecil agar lebih compact */
+  margin: 0 auto;
 }
 
 .q-link {
   background: rgba(139, 92, 246, 0.1);
   border: 1px solid rgba(139, 92, 246, 0.3);
-  padding: 12px 24px;
-  border-radius: 40px;
+  padding: 10px 15px;
+  /* Padding lebih kecil */
+  border-radius: 12px;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
   display: flex;
+  flex-direction: row;
+  /* Icon di samping text */
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  /* Font lebih proporsional */
 }
 
 .q-link:hover {
