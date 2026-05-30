@@ -30,7 +30,7 @@ function sendBooking() {
     return;
   }
 
-  const admin = '6282354444334';
+  const admin = '6287777284234';
   const text = `*BOOKING SERVICE IBS KOMPUTER*%0A%0A - Nama: ${nama}%0A - WA: ${wa}%0A - Layanan: ${layanan}%0A - Keluhan: ${keluhan}`;
   window.open(`https://wa.me/${admin}?text=${text}`, '_blank');
 }
