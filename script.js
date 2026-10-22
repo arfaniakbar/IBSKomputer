@@ -124,7 +124,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Ganti dengan nomor WhatsApp Toko Anda
-    const noWA = "6281234567890";
+    const noWA = "087777284234";
 
     const nama = document.getElementById('nama').value;
     const hp = document.getElementById('hp').value;
