@@ -54,7 +54,7 @@ const serviceData = {
         ]
     },
     'sparepart-upgrade': {
-        title: 'Estimasi Biaya Upgrade Komponen',
+        title: 'Estimasi Biaya Upgrade',
         description: 'Solusi cepat bikin laptop/PC ngebut kembali.',
         items: [
             { name: 'Upgrade SSD 128GB / 256GB / 512GB / 1TB', price: 'Mulai Rp 200.000' },
