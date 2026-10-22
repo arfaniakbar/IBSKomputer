@@ -1,233 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IBS Komputer | Home</title>
-
-  <link rel="icon" href="assets/logo-ibs.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBS Komputer - Toko & Service Komputer</title>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Hubungkan ke CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <nav>
-    <div class="brand">
-      <img src="assets/logo-ibs.png">
-      IBS KOMPUTER
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-laptop-code"></i> IBS <span>Komputer</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#layanan" class="nav-link">Layanan</a></li>
+                <li class="nav-item"><a href="#booking" class="nav-link">Booking</a></li>
+                <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME / HERO SECTION -->
+    <section id="home">
+        <div class="container hero-content">
+            <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Toko & Service Terpercaya</div>
+            <h1>Solusi Terbaik untuk Perangkat & Komputer Anda</h1>
+            <p>Pusat jual beli Laptop, Printer, Hardware, serta layanan service cepat dan bergaransi di IBS Komputer.</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn btn-primary">Booking Service</a>
+                <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN & TOKO SECTION -->
+    <section id="layanan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan & Produk Kami</h2>
+                <p>Klik pada salah satu kategori untuk melihat daftar lengkap dan estimasi harga</p>
+            </div>
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card" onclick="openModal('service-hardware')">
+                    <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Service Hardware</h3>
+                    <p>Perbaikan laptop/PC mati total, ganti LCD, engsel patah, pembersihan fan, & ganti pasta thermal.</p>
+                    <span class="click-info">Lihat Daftar Harga <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card" onclick="openModal('install-ulang')">
+                    <div class="card-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <h3>Install Ulang & Software</h3>
+                    <p>Install Windows 7 s/d terbaru, MacOS, pembersihan virus, dan instalasi aplikasi/game.</p>
+                    <span class="click-info">Lihat Daftar Harga <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card" onclick="openModal('jual-hardware')">
+                    <div class="card-icon"><i class="fa-solid fa-shop"></i></div>
+                    <h3>Jual Hardware & Perangkat</h3>
+                    <p>Menyediakan penjualan Laptop berbagai merk, Printer berkualitas, sparepart, SSD, RAM, & aksesoris.</p>
+                    <span class="click-info">Lihat Kategori Produk <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card" onclick="openModal('sparepart-upgrade')">
+                    <div class="card-icon"><i class="fa-solid fa-memory"></i></div>
+                    <h3>Upgrade Komponen PC</h3>
+                    <p>Tingkatkan performa komputer atau laptop Anda dengan SSD cepat dan penambahan kapasitas RAM.</p>
+                    <span class="click-info">Lihat Estimasi Biaya <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL / POP-UP DETAIL -->
+    <div class="modal" id="priceModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Konten dinamis lewat JavaScript -->
+            </div>
+        </div>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="layanan.html">Layanan</a></li>
-      <li><a href="booking.html">Booking</a></li>
-      <li><a href="kontak.html">Kontak</a></li>
-    </ul>
-  </nav>
 
-  <section class="page active" id="dashboard">
-    <div class="hero">
-      <div class="hero-content">
-
-        <h1>
-          Service Komputer<br>
-          <span style="
-          background:linear-gradient(to right,#fff,var(--accent2));
-          -webkit-background-clip:text;
-          background-clip:text;
-          -webkit-text-fill-color:transparent">
-            Profesional & Terpercaya
-          </span>
-        </h1>
-
-        <p>
-          IBS Komputer adalah solusi terpercaya untuk service laptop, PC,
-          instal ulang Windows, software, dan perawatan perangkat IT Anda
-          di Banjarmasin.
-        </p>
-
-        <div class="hero-cta">
-          <a class="btn-main" href="booking.html">Booking Sekarang</a>
-          <a class="btn-outline" href="layanan.html">Lihat Layanan</a>
-        </div>
-
-        <!-- STATS -->
-        <div class="stats">
-          <div class="stat">
-            <h2>3+</h2>
-            <p>Tahun Pengalaman</p>
-          </div>
-          <div class="stat">
-            <h2>250+</h2>
-            <p>Laptop Diperbaiki</p>
-          </div>
-          <div class="stat">
-            <h2>99%</h2>
-            <p>Garansi Service</p>
-          </div>
-        </div>
-
-        <div class="ticker">
-          <p>
-            Service Laptop dan PC - Install Ulang Windows - Software dan Antivirus -
-            Respon Cepat via WhatsApp - Kota Banjarmasin
-          </p>
-        </div>
-
-        <h2 class="section-title" style="margin-top: 80px;">Mengapa Memilih Kami?</h2>
-
-        <div class="grid">
-          <div class="card glow-card">
-            <i class="fa-solid fa-clock"></i>
-            <h3>Respon Super Cepat</h3>
-            <p>Booking langsung masuk WhatsApp admin dan segera ditangani.</p>
-          </div>
-
-          <div class="card glow-card">
-            <i class="fa-solid fa-user-gear"></i>
-            <h3>Teknisi Berpengalaman</h3>
-            <p>Ditangani teknisi yang paham hardware & software.</p>
-          </div>
-
-          <div class="card glow-card">
-            <i class="fa-solid fa-lock"></i>
-            <h3>Aman & Transparan</h3>
-            <p>Data pelanggan aman, proses jelas.</p>
-          </div>
-
-          <div class="card glow-card">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <h3>Lokasi Strategis</h3>
-            <p>Perum Graha Melati Indah, Banjarmasin.</p>
-          </div>
-        </div>
-
-        <!-- WORKFLOW -->
-        <div class="workflow-section" style="margin-top: 80px;">
-          <h2 class="section-title">Alur Kerja Kami</h2>
-          <div class="workflow-grid">
-            <div class="workflow-item">
-              <div class="step-number">1</div>
-              <i class="fa-solid fa-comments"></i>
-              <h4>Konsultasi</h4>
-              <p>Hubungi WhatsApp atau datang langsung untuk konsultasi gratis.</p>
+    <!-- BOOKING SECTION -->
+    <section id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Booking Service Online</h2>
+                <p>Isi formulir di bawah ini, data akan langsung terhubung ke WhatsApp kami</p>
             </div>
-            <div class="workflow-item">
-              <div class="step-number">2</div>
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
-              <h4>Diagnosa</h4>
-              <p>Pengecekan mendalam untuk mengetahui kerusakan & estimasi biaya.</p>
-            </div>
-            <div class="workflow-item">
-              <div class="step-number">3</div>
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <h4>Perbaikan</h4>
-              <p>Pengerjaan dilakukan dengan teliti setelah Anda menyetujui biaya.</p>
-            </div>
-            <div class="workflow-item">
-              <div class="step-number">4</div>
-              <i class="fa-solid fa-circle-check"></i>
-              <h4>Selesai</h4>
-              <p>Perangkat diuji kembali dan diserahkan dengan garansi servis.</p>
-            </div>
-          </div>
-
-          <!-- POPULAR SERVICES -->
-          <div class="popular-services" style="margin-top: 80px;">
-            <h2 class="section-title">Layanan Paling Dicari</h2>
-            <div class="popular-grid">
-              <div class="popular-card">
-                <div class="pop-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h4>Instal Windows 10/11</h4>
-                <span class="pop-badge">Best Seller</span>
-              </div>
-              <div class="popular-card">
-                <div class="pop-icon"><i class="fa-solid fa-microchip"></i></div>
-                <h4>Ganti SSD / RAM</h4>
-                <span class="pop-badge">Performance+</span>
-              </div>
-              <div class="popular-card">
-                <div class="pop-icon"><i class="fa-solid fa-broom"></i></div>
-                <h4>Cleaning & Ganti Paste</h4>
-                <span class="pop-badge">Cooling</span>
-              </div>
-              <div class="popular-card">
-                <div class="pop-icon"><i class="fa-solid fa-database"></i></div>
-                <h4>Recovery Data</h4>
-                <span class="pop-badge">Emergency</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- TESTIMONIALS -->
-          <div class="testimonials">
-            <h2 class="section-title">Apa Kata Mereka?</h2>
-            <div class="testimonial-grid">
-              <div class="testimonial-card">
-                <div class="testimonial-header">
-                  <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=random" class="client-img"
-                    alt="Client">
-                  <div class="client-info">
-                    <h4>Budi Santoso</h4>
-                    <p>Mahasiswa</p>
-                  </div>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="nama"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="nama" required placeholder="Masukkan nama Anda">
                 </div>
-                <div class="stars">★★★★★</div>
-                <p>"Service laptop disini cepat banget, pagi antar sore udah kelar. Harganya juga transparan ga ada
-                  hidden
-                  cost."</p>
-              </div>
-              <div class="testimonial-card">
-                <div class="testimonial-header">
-                  <img src="https://ui-avatars.com/api/?name=Siti+Aminah&background=random" class="client-img"
-                    alt="Client">
-                  <div class="client-info">
-                    <h4>Siti Aminah</h4>
-                    <p>Karyawan Swasta</p>
-                  </div>
+                <div class="form-group">
+                    <label for="hp"><i class="fa-brands fa-whatsapp"></i> No. WhatsApp</label>
+                    <input type="tel" id="hp" required placeholder="Contoh: 08123456789">
                 </div>
-                <div class="stars">★★★★★</div>
-                <p>"Instal ulang windows lengkap banget aplikasinya, tinggal pake buat kerja. Makasih mas teknisinya
-                  ramah."</p>
-              </div>
-              <div class="testimonial-card">
-                <div class="testimonial-header">
-                  <img src="https://ui-avatars.com/api/?name=Rian+Pratama&background=random" class="client-img"
-                    alt="Client">
-                  <div class="client-info">
-                    <h4>Rian Pratama</h4>
-                    <p>Gamer</p>
-                  </div>
+                <div class="form-group">
+                    <label for="perangkat"><i class="fa-solid fa-laptop"></i> Jenis Perangkat</label>
+                    <select id="perangkat" required>
+                        <option value="">-- Pilih Perangkat --</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Printer">Printer</option>
+                        <option value="PC Desktop / Komputer">PC Desktop / Komputer</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
                 </div>
-                <div class="stars">★★★★★</div>
-                <p>"Rakitan PC disini kabel management-nya rapi parah. Konsultasi spek juga enak, ga dipaksa beli yang
-                  mahal."</p>
-              </div>
+                <div class="form-group">
+                    <label for="keluhan"><i class="fa-solid fa-pen-to-square"></i> Deskripsi Kerusakan / Kebutuhan</label>
+                    <textarea id="keluhan" required placeholder="Jelaskan kendala service atau hardware apa yang ingin dibeli..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"></i> Kirim Pesanan via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- KONTAK SECTION -->
+    <section id="kontak">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi & Kunjungi Kami</h2>
             </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="cta-box">
-            <h2>Laptop Anda Bermasalah?</h2>
-            <p>Jangan biarkan pekerjaan terhambat. Konsultasikan kerusakan perangkat Anda sekarang juga gratis!</p>
-            <a class="btn-main" href="booking.html" style="padding: 15px 40px; font-size: 1.1rem;">Hubungi Kami</a>
-          </div>
-
-          <!-- QUICK NAV -->
-          <div class="quick-nav">
-            <h3>Navigasi Cepat</h3>
-            <div class="quick-links">
-              <a href="index.html" class="q-link"><i class="fa-solid fa-house"></i> Home</a>
-              <a href="layanan.html" class="q-link"><i class="fa-solid fa-screwdriver-wrench"></i> Layanan</a>
-              <a href="booking.html" class="q-link"><i class="fa-solid fa-calendar-check"></i> Booking</a>
-              <a href="kontak.html" class="q-link"><i class="fa-solid fa-phone"></i> Kontak</a>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Alamat Toko</h4>
+                            <p>Jl. Contoh No. 123, Kota Anda</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Telepon / WhatsApp</h4>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Resmi</h4>
+                            <p>info@ibskomputer.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Sabtu: 09:00 - 20:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
-          </div>
-  </section>
+        </div>
+    </section>
 
-  <footer>© 2026 IBS Komputer – PT. Al-Hamdani IBS</footer>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <strong>IBS Komputer</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-  <script src="main.js"></script>
+    <!-- Hubungkan ke JS -->
+    <script src="script.js"></script>
 </body>
-
-</html>
+                                      </html>
